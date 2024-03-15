@@ -6,13 +6,36 @@
     <title>Document</title>
     <style>
 
+#txt-search{
+    /* background-color: yellow; */
+    background-image: url(images/hangame.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#txt-search:focus{
+    background-image: url();
+}
+#btn-search{
+    /* background-image:url(images/bullet02.png);
+    background-repeat:no-repeat;
+    background-position: 5px center; */
+
+    background: url(images/bullet02.png) no-repeat 5px center;
+
+}
     </style>
 </head>
 <body>
     <h1>네이버</h1>
     <form action="">
-        <input type="text" id="search" size="30">
-        <input type="submit" id="btnSearch" value="  검색하기">
+        <input type="text" id="txt-search" size="30">
+        <input type="submit" id="btn-search" value="    검색하기">
+        <button type="submit">
+            <img src="images/bullet02.png" alt="">
+            검색하기
+        </button>
     </form>
+
 </body>
 </html>
