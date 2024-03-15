@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    /* a{
+color: black;
+text-decoration: none;
+    } */
+
+    /* a.one{color: red;}
+     */
+/* 
+    a:link {color : green;}
+    a:visited {color : red;}
+    a:active {color : blue;}
+    a:hover {color : purple;} */
+
+    a{
+        color: black;
+        text-decoration: none;
+    }
+
+    /* 마우스를 올렸을 때 색깔 */
+    a:hover{
+        color:red;
+    }
+/* 자동으로 테두리 만드는거 없애는 법 */
+    .data{
+        outline:none;
+    }
+
+    /* indicator */
+    .data:focus{
+        /* color: red; */
+        background-color: yellow;
+    }
+</style>
+</head>
+
+<body>
+    <h1>링크</h1>
+
+    <a href="https://naver.com" class="one">네이버</a>
+    <a href="https://google.com">구글</a>
+
+    <h1>텍스트 박스</h1>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+
+</body>
+</html>
