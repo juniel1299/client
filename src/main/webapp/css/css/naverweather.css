@@ -1,0 +1,17 @@
+p{
+    font-size: 1em;
+    float: left;
+    border-right: 1px solid black;
+    margin: 0 auto;
+    
+}
+
+#cloudy{
+    size: 20px;
+}
+
+
+.day{
+    font-weight: 20;
+}
+
