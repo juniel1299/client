@@ -61,14 +61,6 @@
             border-top-left-radius: 3px;
             border-bottom-left-radius: 3px;
         }
-
-.input::after{
-    content:'';
-    display: block;
-    clear: both;
-}
-
-
         .input > button {
             float: left;
             border: 1px solid #444;
@@ -77,35 +69,40 @@
             border-top-right-radius: 3px;
             border-bottom-right-radius: 3px;
         }
-        #tbl1{
-            border: 1px solid black;
-            border-collapse: collapse;
 
+        .input::after {
+            content: '';
+            display: block;
+            clear: both;
         }
 
-        #tbl1 td{
+        #tbl1 {
+            /* border: 1px solid black; */
+            /* border-collapse: collapse; */
+            border-radius: 10px;
+            border-spacing: 1px
+        }
+
+        #tbl1 td {
             border: 1px solid black;
             width: 50px;
             height: 50px;
-
+            /* border-radius: 10px; */
         }
 
-
-        #tbl1 tr:nth-child(1) td:nth-child(1){
+        #tbl1 tr:nth-child(1) td:nth-child(1) {
             border-top-left-radius: 10px;
         }
-
-        #tbl1 tr:nth-child(1) td:nth-last-child(1){
+        #tbl1 tr:nth-child(1) td:nth-last-child(1) {
             border-top-right-radius: 10px;
         }
+        #tbl1 tr:nth-last-child(1) td:nth-child(1) {
+            border-bottom-left-radius: 10px;
+        }
+        #tbl1 tr:nth-last-child(1) td:nth-last-child(1) {
+            border-bottom-right-radius: 10px;
+        }
 
-        #tbl1 tr:nth-last-child(1) td:nth-child(1){
-            border-bottom-right-radius: 10px;
-        }
-        #tbl1 tr:nth-last-child(1) td:nth-last-child(1){
-            border-bottom-right-radius: 10px;
-        }
-    
     </style>
 </head>
 <body>
@@ -127,14 +124,19 @@
     <div class="input">
         <input type="text">
         <button type="button">
-            <i class="fa-solid fa-door-open"></i>
+            <i class="fa-solid fa-magnifying-glass"></i>
         </button>
     </div>
 
+    <div class="input">
+        <input type="text">
+        <button type="button">
+            <i class="fa-solid fa-right-to-bracket"></i>
+        </button>
+    </div>
 
     <hr>
 
-    <!-- table#tbl1>tr*3>td*3 -->
     <table id="tbl1">
         <tr>
             <td></td>
@@ -152,5 +154,6 @@
             <td></td>
         </tr>
     </table>
+
 </body>
 </html>
