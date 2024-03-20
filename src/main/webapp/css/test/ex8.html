@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+	
+        h3 {
+            width: 680px;
+            margin: 0px auto;
+        }
+        
+        #one, #two, #three, #four{
+            width: 680px;
+            margin: 10px auto;
+            border: 0px solid black;		
+        }
+        
+        #one div, #two div, #three div, #four div{
+            float: left;
+            margin-right: -10px;
+            border: 10px solid black;
+            overflow: hidden;
+        }
+        
+        #one div img {
+            display: block;
+            transform: translate(-126px, 0px);
+            transition: all .5s;
+        }
+        
+        #one div:hover img {
+            transform: translate(0px, 0px);
+        }
+        
+        #two div img {
+            display: block;
+            opacity: 0;
+            transition: all .5s;
+        }
+        
+        #two div:hover img {
+            opacity: 1;
+        }
+        
+        #three div img {
+            display: block;
+            transition: all .5s;
+            opacity: 0;
+            transform: scale(0, 0);
+        }
+        
+        #three div:hover img {
+            transform: scale(1, 1);
+            opacity: 1;
+        }
+        
+        #four div img {
+            transform: translate(0px, -126px) scale(0, 0) rotate(0deg);
+            display: block;
+            opacity: 0;
+            transition: all .5s;
+        }
+        
+        #four div:hover img {
+            transform: translate(0px, 0px) scale(1, 1) rotate(360deg);
+            opacity: 1;
+        }
+        
+        
+        #one:after, #two:after, #three:after, #four:after {
+            content: " ";
+            display: block;
+            clear: both;
+        }
+
+</style>
+</head>
+<body>
+    <div id="main">
+    <div id="one">
+        <div><img src="images/rect_icon01.png" alt=""></div>
+        <div> <img src="images/rect_icon02.png" alt=""></div>
+        <div><img src="images/rect_icon03.png" alt=""></div>
+        <div><img src="images/rect_icon04.png" alt=""></div>
+        <div><img src="images/rect_icon05.png" alt=""></div>
+    </div>
+    <div id="two">
+        <div><img src="images/rect_icon01.png" alt=""></div>
+        <div> <img src="images/rect_icon02.png" alt=""></div>
+        <div><img src="images/rect_icon03.png" alt=""></div>
+        <div><img src="images/rect_icon04.png" alt=""></div>
+        <div><img src="images/rect_icon05.png" alt=""></div>
+    </div>
+    <div id="three">
+        <div><img src="images/rect_icon01.png" alt=""></div>
+        <div> <img src="images/rect_icon02.png" alt=""></div>
+        <div><img src="images/rect_icon03.png" alt=""></div>
+        <div><img src="images/rect_icon04.png" alt=""></div>
+        <div><img src="images/rect_icon05.png" alt=""></div>
+    </div>
+    <div id="four">
+        <div><img src="images/rect_icon01.png" alt=""></div>
+        <div> <img src="images/rect_icon02.png" alt=""></div>
+        <div><img src="images/rect_icon03.png" alt=""></div>
+        <div><img src="images/rect_icon04.png" alt=""></div>
+        <div><img src="images/rect_icon05.png" alt=""></div>
+    </div>
+
+</div>
+</body>
+</html>
