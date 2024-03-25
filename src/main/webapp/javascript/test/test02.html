@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body oncontextmenu="return false" ondragstart="return false" onselectstart="return false" onload="init();">
+    <h1>회원 가입</h1>
+    <form name="form1">
+
+    <div>
+        아이디 : 
+        <br>
+
+        <input type="text" name="txtId" id="txtId">
+        <br>
+        <input type="text" name="txtMessage" id="txtMessage">
+    </div>
+
+    </form>
+    <script>
+
+        var txtId, txtMessage;
+    
+        function init() {
+            txtId = window.document.form1.txtId;
+            txtMessage = window.document.form1.txtMessage;
+            txtId.onkeyup = valid;
+        }
+    
+        function valid() { 
+            if (txtId.value.length == 0) {
+                txtMessage.value = "";
+            } else if (txtId.value.length < 4) {
+                txtMessage.value = "아이디가 너무 짧습니다.";
+            } else if (txtId.value.length > 12) {
+                txtMessage.value = "아이디가 너무 깁니다.";
+            } else {
+                txtMessage.value = "아이디가 적합합니다.";
+            }
+        }
+       
+    </script>
+
+
+</body>
+</html>

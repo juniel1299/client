@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="form1">
+
+
+    <img src="images/cat01.jpg" name="cat1">
+    <img src="images/cat02.jpg" name="cat2">
+    <img src="images/cat03.jpg" name="cat3">
+    <img src="images/cat04.jpg" name="cat4">
+    <img src="images/cat05.jpg" name="cat5">
+
+
+    </form>
+
+<script>
+
+    document.images['cat1'].onmouseout = m1;
+    document.images['cat2'].onmouseout = m2;
+    document.images['cat3'].onmouseout = m3;
+    document.images['cat4'].onmouseout = m4;
+    document.images['cat5'].onmouseout = m5;
+
+    document.images['cat1'].onmouseover = m6;
+    document.images['cat2'].onmouseover = m7;
+    document.images['cat3'].onmouseover = m8;
+    document.images['cat4'].onmouseover = m9;
+    document.images['cat5'].onmouseover = m10;
+    function m1(){
+        document.images['cat1'].src = 'images/cat01.jpg';
+
+    }
+
+    function m2(){
+        document.images['cat2'].src = 'images/cat02.jpg';
+
+    }
+
+    function m3(){
+        document.images['cat3'].src = 'images/cat03.jpg';
+
+    }
+
+    function m4(){
+        document.images['cat4'].src = 'images/cat04.jpg';
+
+    }
+
+    function m5(){
+        document.images['cat5'].src = 'images/cat05.jpg';
+
+    }
+    function m6(){
+        document.images['cat1'].src = 'images/dog01.jpg';
+
+    }
+    function m7(){
+        document.images['cat2'].src = 'images/dog02.jpg';
+
+    }
+
+    function m8(){
+        document.images['cat3'].src = 'images/dog03.jpg';
+
+    }
+
+    function m9(){
+        document.images['cat4'].src = 'images/dog04.jpg';
+
+    }
+
+    function m10(){
+        document.images['cat5'].src = 'images/dog05.jpg';
+
+    }
+
+
+</script>
+
+</body>
+</html>
