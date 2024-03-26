@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #txt1{
+            width: 70px;
+            height: 10px;
+        }
+        #txt2{
+            width: 200px;
+            height: 15px;
+        }
+        #txt3{
+            width: 200px;
+            height: 15px;
+        }
+        table{
+            border:1px solid black;
+            border-collapse: collapse;
+        }
+        tr{
+            border:1px solid black;
+        }
+        td{
+            border:1px solid black;
+            
+        }
+    </style>
+</head>
+<body>
+    <form name="form1">
+		<h1>우편 번호 검색</h1>
+		<table id="tbl1">
+            <tr>
+				<td>우편번호</td>
+				<td>
+					<input type="text" id="txt1" name="txt1" readonly="">
+					<input type="button" value=" 우편번호검사하기" onclick="search()" name='btn1' id='btn1';>
+				</td>
+			</tr>
+			<tr>
+				<td>주소</td>
+				<td><input type="text" id="txt2" name="txt2" readonly=""></td>
+			</tr>
+			<tr>
+				<td>상세주소</td>
+				<td><input type="text" id="txt3" name="txt3"></td>
+			</tr>
+    </table>
+	</form>
+
+    <script>
+        document.all.btn1.onclick = m1;
+
+        function m1(){
+
+                window.open("text08_1.html", "search", "width=300, height=200");		
+                
+        }
+    </script>
+</body>
+</html>

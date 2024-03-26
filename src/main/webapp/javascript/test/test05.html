@@ -32,43 +32,42 @@
 </head>
 <body>
     <table>
-        <tr id="list">
+        <tr>
             <td>
-                <a href="#" data-no="1" name="dog1">강아지1</a>
-                <a href="#" data-no="2" name="dog2">강아지2</a>
-                <a href="#" data-no="3" name="dog3">강아지3</a>
-                <a href="#" data-no="4" name="dog4">강아지4</a>
-                <a href="#" data-no="5" name="dog5">강아지5</a>
+                <a href="#" data-no="1">강아지1</a>
+                <a href="#" data-no="2">강아지2</a>
+                <a href="#" data-no="3">강아지3</a>
+                <a href="#" data-no="4">강아지4</a>
+                <a href="#" data-no="5">강아지5</a>
             </td>
 
-            <td><img src="images/dog01.jpg" alt="" name="dog"></td>
+            <td><img src="images/dog01.jpg" alt="" name="img"></td>
         </tr>
     </table>
 
 
     <script>
 
-        document.images['dog'].onmouseover = m1;
-        document.images['dog'].onmouseover = m2;
-        document.images['dog'].onmouseover = m3;
-        document.images['dog'].onmouseover = m4;
-        document.images['dog'].onmouseover = m5;
+		window.onload = function() {
 
-        function m1(){
-        document.images['dog'].src = 'images/dog01.jpg';
-        }
-        function m2(){
-        document.images['dog'].src = 'images/dog02.jpg';
-        }
-        function m3(){
-        document.images['1'].src = 'images/dog03.jpg';
-        }
-        function m4(){
-        document.images['1'].src = 'images/dog04.jpg';
-        }
-        function m5(){
-        document.images['1'].src = 'images/dog05.jpg';
-        }
-    </script>
+			var list = document.links;
+
+			for (var i=0; i<list.length; i++) {
+				
+				list[i].onmouseover = function() {
+					
+					document.images["img"].src = "images/dog0" + event.srcElement.dataset["no"] + ".jpg";
+
+				};
+
+				list[i].onclick = function() {
+					window.open("images/dog0" + event.srcElement.dataset["no"] + "_big.jpg", "big", "width=1400, height=1050");
+				};
+
+			}
+
+		};
+		
+	</script>
 </body>
 </html>

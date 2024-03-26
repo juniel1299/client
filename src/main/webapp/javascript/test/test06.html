@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div #div{
+            border: 10px soild red;
+        }
+    </style>
+</head>
+<body>
+    <div id="div">
+        <img src="images/img01.jpg" name="img1">
+        <img src="images/img02.jpg" name="img2">
+        <img src="images/img03.jpg" name="img3">
+    </div>
+    <div>
+        <input type="text" name="txt" id="txt">
+    </div>
+
+
+    <script>
+        document.all.img1.onmouseover = m1;
+        document.all.img2.onmouseover = m2;
+        document.all.img3.onmouseover = m3;
+        document.all.img1.onmouseout = m4;
+        document.all.img2.onmouseout = m5;
+        document.all.img3.onmouseout = m6;
+
+        function m1(){
+            img1.src = 'images/img04.jpg';
+            document.all.txt.value = '\'스키\'타는 사람이 \'당근\'으로 바뀌었습니다';
+        }
+            function m2(){
+            img2.src = 'images/img05.jpg';
+            document.all.txt.value = '\'해바라기\'가 \'피망\'으로 바뀌었습니다';
+
+        }
+        function m3(){
+            img3.src = 'images/img06.jpg';
+            document.all.txt.value = '\'나무\'가 \'개\'가 되었습니다.';
+
+        }
+        function m4(){
+            img1.src = 'images/img01.jpg';
+            document.all.txt.value = '';
+        }
+        function m5(){
+            img2.src = 'images/img02.jpg';
+            document.all.txt.value = '';
+        }
+        function m6(){
+            img3.src = 'images/img03.jpg';
+            document.all.txt.value = '';
+        }
+    </script>
+</body>
+</html>
