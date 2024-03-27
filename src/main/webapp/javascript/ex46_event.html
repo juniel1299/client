@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            padding:50px;
+        }
+        #p1{background-color: tomato;}
+        #p2{background-color: gold;}
+        #p3{background-color: cornflowerblue;}
+    </style>
+</head>
+<body>
+    <div id="p1" class="box">
+        <div id="p2" class="box">
+            <div id="p3" class="box"></div>
+        </div>
+    </div>
+
+
+    <input type="text" id="txt1">
+
+    <script>
+
+        //이벤트 버블링(Event Bubbling) vs
+        //이벤트 터널링(Event Tunneling) == 이벤트 캡쳐링(Capturing)
+
+        const p1 = document.getElementById('p1');
+        const p2 = document.getElementById('p2');
+        const p3 = document.getElementById('p3');
+
+        //document.body.onclick = function(){
+        //    alert('body');
+        //};
+
+        //p1.onclick = function(){
+        //    alert('빨강');
+        //    event.cancelBubble = true;
+        //};
+
+        //p2.onclick = function(){
+        //    alert('노랑');
+        //    event.cancelBubble = true;
+        //};
+
+        //p3.onclick = function(){
+        //    alert('파랑');
+        //    //event.cancelBubble = true;
+        //    event.stopPropagation();
+        //};
+
+        //영역 구조 HTML > BODY > P1 > P2 > P3
+
+        //이벤트 버블링 : 하위에서 상위로 올라갈 때 인식 > 자바스크립트에서 이 방식이다
+
+        //이벤트 터널링 : 상위에서 하위로 내려갈 때 인식
+        
+        // 버블링이 안 일어나게 하려면 
+        //event.cancelBubble = true; 또는 event.stopPropagation(); 해야함
+        //(단, 건너뛰어서 이벤트가 발생하게 하는건 안된다..) 
+
+        window.onkeydown = function(){
+            if(event.keyCode ==51) { //3
+                location.href = 'https://naver.com';
+            }
+        };
+        
+        document.getElementById('txt1').onkeydown = function(){
+            if(event.keyCode >= 48 && event.keyCode <=57){
+                alert('숫자');
+                event.cancelBubble = true; //3을 그냥 누르면 naver 이동 , 텍스트박스에서 3 쓰면 이동 안 함 
+            }
+        };
+
+
+        //자바스크립트 이벤트 전파 방식 > 버블링 
+        
+        //1. BOM 이벤트
+        // - 버블링 
+
+        //2. DOM 이벤트
+        // - 버블링, 터널링 둘 다 가능
+
+        p1.addEventListener('click', function(){
+            alert('빨강');
+            //event.cancelBubble = true;
+            event.stopPropagation();
+        }, true); //false가 버블링,  true가 터널링 [기본 값이 false 임 ]
+
+        p2.addEventListener('click', function(){
+            alert('노랑');
+        }, true);
+
+        p3.addEventListener('click', function(){
+            alert('파랑');
+        }, true); // 터널링이므로 빨 노 파 , 버블링이면 파 노 빨 
+    
+//        p1.addEventListener('click', function(){
+//            alert('빨강');
+//        }); //false가 버블링,  true가 터널링
+
+//        p2.addEventListener('click', function(){
+//            alert('노랑');
+//        });
+
+//        p3.addEventListener('click', function(){
+//            alert('파랑');
+//        }); // 터널링이므로 빨 노 파 , 버블링이면 파 노 빨 
+    
+        
+    </script>
+
+</body>
+</html>
