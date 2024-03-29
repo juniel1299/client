@@ -10,6 +10,20 @@
         body {
             width: 800px;
             margin: 20px auto;
+            overflow-y: scroll;
+        }
+
+        body::-webkit-scrollbar {
+            width: 20px;
+        }
+        body::-webkit-scrollbar-track {
+            background-color: gray;
+        }
+        body::-webkit-scrollbar-thumb { 
+            background-color: white;
+        }
+        body::-webkit-scrollbar-button {
+            display: none;
         }
 
         #search {
@@ -184,8 +198,32 @@
                 $('#search > span > span').eq(0).text(ui.values[0].toLocaleString());
                 $('#search > span > span').eq(1).text(ui.values[1].toLocaleString());
 
+                showItem(ui.values[0], ui.values[1]);
+
             }
         });
+
+
+        function showItem(minPrice, maxPrice) {
+
+            $('#list .item').each((index, item) => {
+
+                const price = parseInt($(item).children().last().text().replace(/,/g, ''));
+
+                //console.log(price);
+
+                if (price >= parseInt(minPrice)
+                    && price <= parseInt(maxPrice)) {
+                    $(item).show();
+                } else {
+                    $(item).hide();
+                }
+
+            });
+
+        }
+
+        showItem(30000, 70000);
 
     </script>
 </body>
